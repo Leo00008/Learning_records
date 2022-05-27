@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function arr() {// 假设 arguments =  1 2 3 4 5
+
+            for (i = 0; i <= arguments.length-1; i++) {  //需要比较的趟数，5个程序就需要走四趟。
+                for (j = 0; j <= arguments.length - i - 1; j++) { //每行需要比较的次数
+                    if (arguments[j] > arguments[j + 1]) {
+                        var temp = arguments[j]
+                        arguments[j] = arguments[j + 1]
+                        arguments[j + 1] = temp
+                    }
+                    
+                }
+               
+            }
+            return arguments
+          
+        }
+        var re =arr([5,4,3,2,1]);
+        console.log(re); 
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

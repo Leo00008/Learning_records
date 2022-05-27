@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div getTime="20" data-index="i">1</div>
+  
+    
+
+    <script>
+        var time=document.querySelector('div')
+        // console.log(time.getTime); 这个是错误的
+        time.setAttribute('data-time',20)
+        time.setAttribute('data-index','2');
+       console.log(time.getAttribute('data-index')); 
+
+       //h5新增
+       console.log(time.dataset);
+
+    </script>
+</body>
+</html>

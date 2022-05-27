@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titel {
+            position: relative;
+            width: 1200px;
+            height: 100px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .titel button{
+            position: absolute;
+            right: 275px;
+            top: 15px;
+            background-color: #999;
+            border: none;
+            opacity: 0.3;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="titel" id="advert">
+        <a href="#">
+            <img src="./images/ldh.jpg" alt="">
+        </a>
+        <button>×</button>
+    </div>
+
+    <script>
+        var btn=document.querySelector('button')
+        var box=document.getElementById('advert')
+
+        btn.onclick=function(){
+            box.style.display='none'
+        }
+    </script>
+</body>
+</html>

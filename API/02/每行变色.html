@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+
+        table thead {
+            background-color: skyblue;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        table thead th {
+            float: left;
+            width: 150px;
+            height: 30px;
+        }
+
+        tbody td {
+            float: left;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        tbody tr {
+            border-collapse: collapse;
+        }
+
+        tbody tr td {
+            border-bottom: 1px solid #000;
+        }
+
+        /* tbody tr:hover{
+            background-color: skyblue;
+        } */
+
+        .bg {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>代码</th>
+            <th>名称</th>
+            <th>最新公布净值</th>
+            <th>累计净值</th>
+            <th>前单位净值</th>
+            <th>净值增长率</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.024%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.024%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.024%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.024%</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.024%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var tr = document.querySelector('tbody').querySelectorAll('tr')
+        console.log(tr);
+        for (i = 0; i < tr.length; i++) {
+            tr[i].onmouseover = function () {
+                for (i = 0; i < tr.length; i++) {
+                    tr[i].onmouseout = function () {
+                        this.className = ''
+                    }
+                }
+                this.className = 'bg'
+            }
+        }
+    </script>
+</body>
+
+</html>

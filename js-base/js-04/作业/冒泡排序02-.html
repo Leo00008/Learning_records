@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function paixu() {
+
+            for (i = 0; i < arguments.length; i++) {//比较行数  如果五个数，比较4次
+                for (j = 0; j <= arguments.length - i - 1; j++) {//每行比较的次数
+                    if (arguments[j] > arguments[j + 1]) {
+                        var temp = arguments[j]
+                        arguments[j] = arguments[j + 1]
+                        arguments[j + 1] = temp
+                    }
+                    return arguments;
+                }
+            }
+        }
+        var result = paixu(5, 4, 6, 9, 8, 2, 1, 7);
+        console.log(result);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

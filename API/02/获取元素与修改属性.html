@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="index" index="1"></div>
+
+
+    <script>
+        var div=document.querySelector('div')
+        console.log(div.id);
+        //getAttribute
+        console.log(div.getAttribute('index'));
+
+        //2.修改属性   setAttribute
+        div.setAttribute('id','hah');
+        console.log(div.getAttribute('id'));
+
+        //3.移除属性
+        div.removeAttribute('id')
+
+    </script>
+</body>
+</html>

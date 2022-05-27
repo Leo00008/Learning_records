@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 35px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            text-align: center;
+            line-height: 30px;
+        }
+        
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            outline: none;
+            border: none;
+        }
+
+        .box label {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            right: 5px;
+            top: 5px;
+        }
+        .box label img{
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password">
+        <label for=''>
+            <img src="./images/close.png " alt="">
+        </label>
+
+        <!-- /* <a href="#">忘记密码?</a> */ -->
+    </div>
+
+    <script>
+        var input = document.querySelector('input')
+        var img = document.querySelector('img')
+        var flag = 0;
+        img.onclick = function () {
+            if(flag==0){
+                input.type = 'Text';
+                img.src='./images/open.png'
+                flag=1;
+            }else{
+                input.type='password'
+                img.src='./images/close.png'
+                flag=0;
+            }
+            
+
+        }
+    </script>
+</body>
+
+</html>

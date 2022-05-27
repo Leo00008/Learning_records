@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            justify-content: left;
+            margin: 100px auto;
+            width: 300px;
+            height: 40px;
+            border: 1px solid #000;
+            line-height: 40px;
+        }
+
+        .box input {
+            width: 150px;
+            height: 38px;
+
+        }
+
+        .box p {
+            display:block;
+            font-size: 12px;
+            padding-right: 5px;
+            color: #999;
+        }
+
+        .pic {
+            display: inline-block;
+            font-size: 12px;
+            padding-left:20px ;
+            background-size: cover;
+            background: url(./images/mess.png) no-repeat left center;
+        }
+
+        .wrong {            
+            
+            background-image: url(./images/wrong.png);
+        }
+
+        .right {     
+            background-image: url(./images/right.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password" value="">
+        <p class="pic">请输入6-12位密码</p>
+    </div>
+
+
+
+    <script>
+        var input = document.querySelector('input')
+        var span = document.querySelector('span')
+        var p = document.querySelector('p')
+
+       
+        input.onblur = function () {
+            if (input.value.length < 6 || input.value.length > 12) {
+                p.className='pic wrong'
+                p.innerHTML='输入错误'
+            }else{
+                p.className='pic right'
+                p.innerHTML='密码正确'
+            }
+        }
+        
+
+    </script>
+</body>
+
+</html>

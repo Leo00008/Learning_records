@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current {
+            background-color: pink;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            outline: none;
+        }
+        button:focus{
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script>
+        var btns = document.querySelectorAll('button')
+        for (i = 0; i < btns.length; i++) {
+            btns[i].onclick=function(){
+                for(i=0;i<btns.length;i++){
+                    btns[i].className=''
+                }
+
+                this.className='current'
+            }
+
+            btns[i].onblur=function(){
+                for(i=0;i<btns.length;i++){
+                    btns[i].className=''
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

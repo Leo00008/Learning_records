@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/msg.css">
+</head>
+<body>
+    <div class="msg_ipt banner">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>提交</button>
+    </div>
+    <hr>
+    <div class="msg_board banner">
+        <li>1</li>
+        <li>1</li>
+    </div>
+
+
+    <script>
+        //获取Input
+        var ipt=document.querySelector('.msg_ipt').querySelector('textarea')
+        //获取button
+        var btn=ipt.nextElementSibling
+        //获取留言板元素
+        var msg_board=document.querySelector('.msg_board')
+
+        //提交按钮点击事件
+        btn.onclick=function(){
+            if(ipt.value==''){
+                alert('您没有输入内容')
+            }else{
+                //生成一个li元素
+            var li=document.createElement('li')
+            //li元素里面装文本框的内容
+            li.innerHTML=ipt.value
+            //留言板模块的第一个元素之前添加li
+            //新留言往前显示，就用insertBefore。往后就用appendchild
+            msg_board.insertBefore(li,msg_board.children[0])
+            //清空文本框
+            ipt.value=''     
+            }
+                  
+        }
+
+        
+    </script>
+</body>
+</html>

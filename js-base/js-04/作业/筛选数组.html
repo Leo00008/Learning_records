@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //要求：将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于 10 的元素选出来，放入新数组。
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7, 99];
+        arrNew = [];
+        sum = 0;
+
+        for (i = 0; i <= arr.length; i++) {
+            if (arr[i] >= 10) {
+                //新数组应该以0开始，递增
+                arrNew[sum] = arr[i];
+                sum = sum + 1;
+            }
+
+
+        }
+        console.log(arrNew);
+        console.log(arrNew.length);
+
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7, 99];
+        arrNew = [];
+        //arrNew.length=0
+
+        for (i = 0; i <= arr.length; i++) {
+            if (arr[i] >= 10) {
+                //新数组应该以0开始，递增
+                arrNew[arrNew.length] = arr[i];
+            }
+        }
+        console.log(arrNew);
+
+        var arr2 = [97, 58, 72, 13, 66, 100, 22, 93, 26, 77, 70, 18, 67, 45, 5, 38, 46, 85, 42, 75, 57, 60, 0, 24, 79, 19, 20, 64, 51, 78, 43, 69, 27, 36, 50, 29, 73, 4, 84, 7, 68, 83, 54, 11, 8, 28, 48, 91, 95, 56, 21, 86, 99, 16, 52, 90, 34, 53, 30, 9, 49, 25, 89, 87, 2, 33, 63, 92, 31, 71, 37, 61, 6, 3, 15, 39, 94, 98, 65, 82, 59, 55, 10, 88, 32, 80, 96, 74, 12, 17, 1, 23, 76, 40, 44, 47, 35, 14, 62, 41];
+        var newArr = [];
+        for (i = 0; i < arr2.length; i++) {
+            if (arr2[i] == 10) {
+                newArr[newArr.length]=arr2[i];
+            }
+        }
+        console.log('小于十的'+newArr+'\t'+'合计：'+newArr.length);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

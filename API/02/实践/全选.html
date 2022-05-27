@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 355px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 30px;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            width: 150px;
+            height: 30px;
+            background-color: pink;
+            float: left;
+
+        }
+
+        thead th:nth-child(1) {
+            width: 50px;
+        }
+
+        tbody td {
+            float: left;
+            width: 150px;
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody td:nth-child(1) {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>
+                <input type="checkbox">
+            </th>
+            <th>型号</th>
+            <th>价格</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var h_ipt = document.querySelector('thead').querySelector('input')
+        var b_ipt = document.querySelector('tbody').querySelectorAll('input')
+
+        h_ipt.onclick = function () {
+            //每次点击头部框的时候，body的框遍历一次选中
+            for (i = 0; i < b_ipt.length; i++) {
+                b_ipt[i].checked = this.checked;
+            }
+        }
+
+        for (i = 0; i < b_ipt.length; i++) {
+            //每个框被点击的时候，都要去检查以下其他框是否被点击
+            b_ipt[i].onclick = function () {
+                //声明一个变量当作开关
+                var flag = true
+                
+                for (i = 0; i < b_ipt.length; i++) {
+                    if (!b_ipt[i].checked) {
+                        flag = false
+                    }
+                }
+
+                h_ipt.checked = flag
+            }
+
+        }
+    </script>
+</body>
+
+</html>

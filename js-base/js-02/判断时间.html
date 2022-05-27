@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var time = prompt('请输入时间：')
+
+        if (time >= 0 && time <= 6) {
+            alert('现在是凌晨')
+        } else if (time > 6 && time <= 12) {
+            alert('中午好')
+        } else if (time > 12 && time <= 18) {
+            alert('下午好')
+        } else if (time > 18 && time <= 24) {
+            alert('晚上好')
+        }else if(time <0 || time>24){
+            alert('输入错误')
+        }
+    </script>
+</body>
+
+</html>

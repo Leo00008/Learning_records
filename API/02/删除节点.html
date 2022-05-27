@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>删除节点</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var btn=document.querySelector('button')
+        var ul=document.querySelector('ul')
+        console.log(ul);
+        btn.onclick=function(){
+            if(ul.children.length==1){
+                btn.disabled=true
+            }
+
+
+
+            ul.removeChild(ul.children[0])//依次删除第一个节点  也可以设置最后一个节点
+
+        //    ul.removeChild(ul.children[ul.children.length-1])//从最后的节点开始删除
+
+
+        }
+    </script>
+</body>
+</html>

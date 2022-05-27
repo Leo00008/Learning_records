@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [5, 4, 3, 2, 1];
+        for (i = 0; i <= arr.length - 1; i++) {   //循环次数是数组长度的-1次。
+            for (j = 0; j <= arr.length - i - 1; j++) { //每行比较的次数  数组长度-i-1；
+                if (arr[j] > arr[j + 1]) {  //比较次数需要参考i的值，
+                    var temp = arr[j];       
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

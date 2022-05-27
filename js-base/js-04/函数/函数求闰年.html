@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function year(year) {
+           if(year%100 !=0 || year%400==0){ //  年份除上100不等于0，是为了筛出每百年。
+
+               if(year%4==0){
+                   return true;
+               }else{
+                   return false;
+               }
+               
+           }
+           return false
+           }
+
+           var y=year(Number(prompt('请输入年份：')));
+           console.log(y);
+           
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

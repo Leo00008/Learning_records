@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //abcoefoxyozzopp
+        //核心算法：利用 charAt(） 遍历这个字符串
+        /* 把每个字符都存储给对象， 如果对象没有该属性，就为1，如果存在了就 +1
+        遍历对象，得到最大值和该字符  */
+        // /判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数。
+        // 对象 o {  }
+
+
+        var str = 'abcoefoxyozzopp';
+        var o = {};//遍历数组，把每个字符存进o
+        for (i = 0; i < str.length; i++) {
+            var chars = str.charAt(i) //字符串的每一个字符
+            if (o[chars]) {    //o[chars]得到的是每个字符的属性
+                o[chars]++;
+            } else {
+                o[chars] = 1
+            }
+        }
+        console.log(o);
+        //遍历对象，求出最大值
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符：' + ch);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

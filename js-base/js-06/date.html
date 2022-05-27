@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date();
+        console.log(date);
+        // var date1996 = new Date('1996-06-18 18:00:30')
+        // console.log(date1996);
+
+        // var date2020 = new Date(2020, 10, 01);
+        // console.log(date2020);
+
+        // var date1 = new Date('1996-10-01 18:00:19');
+        // console.log(date1);
+
+        // var year = date.getFullYear();
+        // console.log(year);
+        // console.log(date.getMonth() + 1);
+        // // console.log(date.getDay());
+        // console.log(date.getDate());
+
+
+        //写一个 2019年5月1日 星期三
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var date = date.getDate();//返回的是几号
+        var day = date.getDay();
+
+
+        console.log(year + '年' + month + '月' + date + '日\t' + '星期' + day);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

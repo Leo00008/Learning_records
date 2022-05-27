@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            display: flex;
+            width: 300px;
+            height: 40px;
+            margin: 100px auto;
+            border: 2px solid #007cf0;            
+        }
+        .box input{
+            width: 250px;
+            height: 36px;
+            outline: none;
+            border: none;
+            border-right: 2px solid #007cf0;
+            color: #999;
+            padding-left: 5px;
+            
+        }
+        .box button{
+            width: 48px;
+            height: 36px;
+            background-color: #007cf0;
+            border: none;
+            color: white;
+            font-size: 18px;
+            line-height: 36px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" value="手机..." title="hah ">
+        <button>搜索</button>
+
+    </div>
+
+
+    <script>
+        var input=document.querySelector('input')
+
+        input.onfocus=function(){//得到焦点
+            if(this.value==='手机...'){//如果搜索框是手机。。。，那么在他获取焦点的时候清空里面的value
+                this.value=''
+            }
+            this.style.color='#333' //获得焦点的时候，输入的文字是黑的
+        }
+
+        
+        input.onblur=function(){//失去焦点
+            if(this.value===''){//如果搜索框里面是空的，在失去焦点的时候，input里面的value给上手机
+                this.value='手机...'
+            }
+            this.style.color='#999'//失去焦点时候，input的文字是灰色的
+        }
+    </script>
+</body>
+
+</html>

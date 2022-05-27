@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        do {
+            var order = prompt('欢迎使用简易计算机：\n1，加法计算\n2，减法计算 \n3，乘法计算\n4，除法计算\n5,退出\n  请输入您的选项')
+            if(order>5 || order<1){
+                alert('输入错误')
+                wrong=0;
+            }
+            if (order == 1) {
+                var num1 = Number(prompt('数字1'))
+                var num2 = Number(prompt('数字2'))
+                result = num1 + num2;
+                alert(result);
+            }
+            if (order == 2) {
+                var num1 = Number(prompt('数字1'))
+                var num2 = Number(prompt('数字2'))
+                result = num1 - num2;
+                alert(result);
+            }
+            if (order == 3) {
+                var num1 = Number(prompt('数字1'))
+                var num2 = Number(prompt('数字2'))
+                result = num1 * num2;
+                alert(result);
+            }
+            if (order == 4) {
+                var num1 = Number(prompt('数字1'))
+                var num2 = Number(prompt('数字2'))
+                result = num1 / num2;
+                alert(result);
+            }
+
+            if(order ==5){
+                alert('已退出')
+                break;
+            }
+
+        } while ( order == 1,2,3,4)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

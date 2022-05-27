@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+//创建一个电脑对象，该对象要有颜色、重量、品牌、型号，可以看电影、听音乐、打游戏和敲代码。
+        function Computer(color,weight,brand,modle,){
+            this.color=color;
+            this.weight=weight;
+            this.brand=brand;
+            this.modle=modle;
+            this.fn=function(skill){
+                console.log(skill);
+            }
+        }
+
+        var computer1=new Computer('颜色:red','宽度:768g','品牌:sumsing','型号:M1',)
+        var computer2=new Computer('颜色:green','宽度:1440g','品牌:lennovl','型号:M2')
+        var computer3=new Computer('颜色:yellow','宽度:120g','品牌:MSI','型号:M3')
+        var computer4=new Computer('颜色:blue','宽度:996g','品牌:SOYO','型号:M7')
+        var computer5=new Computer('颜色:born','宽度:857g','品牌:Sumsing','型号:M1')
+        // console.log(computer1);
+        // computer1.fn('看电影')
+        for(var k in computer1){
+            // console.log(k);
+            console.log(computer1[k]);           
+        }
+        computer1.fn('看电影')
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Character(name,type,blood,attack){
+            this.name=name;
+            this.type=type;
+            this.blood=blood;
+            this.attack=attack;//攻击方式
+            this.skill=function(skillName){
+                console.log(skillName);
+            }
+        }
+        var houyi=new Character('后羿','射手型','血量100','远程攻击')
+        var lianpo=new Character('廉颇','力量型','血量500','近战攻击')
+
+        console.log(houyi.name);
+        console.log(houyi.blood);
+        houyi.skill('大招：火鸟');
+        console.log(houyi.type);
+        console.log(houyi.attack);
+
+        console.log(lianpo);
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var obj={
+            name: '可可',
+            type: '阿拉斯加犬',
+            age: 5+'岁',
+            color: '颜色：棕色',
+            bark: function(){
+                console.log('汪汪汪');
+            },
+            show : function(){
+                console.log('演电影');
+            }
+        }
+        console.log(obj.name,obj.age);
+        console.log(obj['color']);
+        obj.bark();
+        obj.show();
+        console.log(obj);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/del_msg.css">
+</head>
+
+<body>
+    <div class="msg banner">
+        <div class="msg_text">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>提交</button>
+        </div>
+
+        <div class="msg_board banner">
+
+
+        </div>
+    </div>
+
+    <script>
+        var btn = document.querySelector('.msg_text').querySelector('button')
+        var text = btn.previousElementSibling;
+
+        var board = document.querySelector('.msg_board')
+
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert('请输入内容')
+            } else {
+                var li = document.createElement('li')
+                var del = document.createElement('button')
+                del.innerHTML = '删除'
+                li.innerHTML = text.value
+                li.insertBefore(del, li.children[0])
+                board.insertBefore(li, board.children[0])
+                text.value = ''
+
+                var dele = document.querySelector('.msg_board').querySelectorAll('button')
+                for (i = 0; i < dele.length; i++) {
+                    dele[i].onclick = function () {
+                        //  dele【i】的父元素，    this.parentNode 就是li
+                        board.removeChild(this.parentNode)
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

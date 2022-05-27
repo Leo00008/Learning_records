@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        // var random1=getRandomIntInclusive(1,28)
+        // var random2=getRandomIntInclusive(1,28)
+        // var random3=getRandomIntInclusive(1,28)
+        // var random4=getRandomIntInclusive(1,28)
+        // var random5=getRandomIntInclusive(1,28)
+        
+        // console.log(random1);
+        // console.log(random2);
+        // console.log(random3);
+        // console.log(random4);
+        // console.log(random5);
+        var dianming=['张三','李四','李哈哈','李思思','吕布'];
+        console.log( dianming[getRandom(0,4)]);
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

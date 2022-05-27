@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: rgb(189, 189, 189);
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav {
+            width: 400px;
+            height: 50px;
+            background-color: #999;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .nav li {
+            float: left;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .nav li a {
+            display: block;
+            width: 100px;
+            height: 50px;
+        }
+
+        .nav li  a:hover {
+            background-color: #fff;
+            transition: all .5s;
+        }
+
+        .box1 {
+            position: fixed;
+            width: 100px;
+            height: 150px;
+            left: 760px;
+            top: 150px;
+            background-color: #999;
+            display: none;
+        }
+        .box1 a{
+            display: block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <li id="index">
+            <a href="#">首页</a>
+            <div class="box1">
+            <a href="#">个人中心</a>
+            <a href="#">设置</a>
+            <a href="#">交易明细</a>
+        </div>
+        </li>
+        
+
+
+
+        <li id="news">
+            <a href="#">新闻</a>
+        </li>
+        <li id="game">
+            <a href="#">游戏</a>
+        </li>
+        <li id="blog">
+            <a href="#">微博</a>
+        </li>
+    </div>
+
+    <script>
+        var index = document.getElementById('index')
+        var news = document.getElementById('news')
+        var game = document.getElementById('game')
+        var blog = document.getElementById('blog')
+
+        var box = document.querySelector('.box1')
+
+        index.onmouseover = function () {
+            box.style.display = 'block'
+        }
+        index.onmouseout = function () {
+            box.style.display='none'
+        }
+
+
+    </script>
+</body>
+
+</html>

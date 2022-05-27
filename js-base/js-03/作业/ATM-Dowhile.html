@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var balance = 200;
+        do {
+            var order = prompt('请输入您需要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出')
+            if (order == 1) {
+                var money = prompt('存多少钱？')
+                balance = balance + parseInt(money);
+                alert('您当前余额为：' + balance);
+                continue;
+            }
+            if (order == 2) {
+                money = prompt('取多少钱？')
+                balance = balance - money;
+                alert('您当前余额为：' + balance);
+            }
+            if (order == 3) {
+                alert('您当前余额为：' + balance);
+            }
+        } while (order != 4)
+        alert('请取走您的卡！')
+
+
+
+
+    </script>
+</body>
+
+</html>

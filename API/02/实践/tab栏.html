@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        .goods {
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .list ul {
+            height: 32px;
+            border-bottom: 2px solid rgb(131, 15, 15);
+        }
+
+        .list li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            background-color: #999;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: rgb(131, 15, 15) !important;
+        }
+
+
+        .item {
+            display: none;
+        }
+
+        .item img {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goods">
+        <div class="list">
+            <ul>
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+        <div class="item" style="display: block;">
+            <img src="../images/1.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../images/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../images/3.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../images/4.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="../images/1.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        var lis = document.querySelector('.list').querySelectorAll('li')
+        var items = document.querySelectorAll('.item')
+
+        for (i = 0; i < lis.length; i++) {
+
+            lis[i].setAttribute('index', i)
+
+            lis[i].onclick = function () {
+                for (i = 0; i < lis.length; i++) {
+                    lis[i].className = ''
+                }
+                this.className = 'current'
+
+
+                var index = this.getAttribute('index')
+
+                for (i = 0; i < lis.length; i++) {
+                    items[i].style.display='none'
+                }
+                items[index].style.display='block'
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

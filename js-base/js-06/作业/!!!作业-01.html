@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var str = 'askfhdkshafkjsdhjkfhkjasdhfjkhsadjkfhkjadshkjfhjkdsahjkfhdksjahfkjadshkjfh';
+        var o = {};
+        for (i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars] += 1;
+            } else {
+                o[chars] = 1;
+            }
+
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            // console.log(o[k]);
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log('最多次数：' + max);
+        console.log('字母：' + ch);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

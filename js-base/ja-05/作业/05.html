@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //写一个函数，实现对数字数组的排序。
+        function sort() {
+            for (var i = 0; i < arguments.length - 1; i++) {
+                for (var j = 0; j < arguments.length - i - 1; j++) {
+                    if (arguments[j] > arguments[j + 1]) {
+                        var temp = arguments[j]
+                        arguments[j] = arguments[j + 1]
+                        arguments[j + 1] = temp
+                    }
+                    
+                }
+              
+            }
+            return arguments
+        }
+        var arr = sort(5,4,3,2,1);
+        var arr1 = sort(3,6,45,4,1,5,78,4,15,1,2,5,1,1,5);
+        var arr2 = sort(5,5,8,79,5,41);
+        console.log(arr);
+        console.log(arr1);
+        console.log(arr2);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

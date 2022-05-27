@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+
+        var result = getRandom(1, 100);
+        var sum = 5;
+
+        while (true) {
+
+            var num = prompt('请输入1-100的数字：')
+            sum -=1;
+            if (sum == 0) {
+                alert('没有机会了')
+                break;
+            }
+
+
+            if (num > result) {
+                alert('数字大了')
+                continue;
+            } else if (num < result) {
+                alert('数字小了')
+                continue;
+            } else if (num == result) {
+                alert('恭喜~喝酒吧！！！')
+                break;
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

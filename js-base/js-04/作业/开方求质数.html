@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function prime(num) {
+            if (num < 2) {
+                return false;
+            }
+
+            var root = Math.ceil(Math.sqrt(num));
+            // console.log(root);
+
+            for (i = 2; i <= root; i++) {
+                if (num % i === 0) {
+                    return false;
+                }                              
+            }
+            return true;
+        }
+
+        console.log(prime(121));
+        console.log(prime(8));
+        console.log(prime(7));
+        console.log(prime(5));
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+
+    <script>
+        var ul = document.querySelector('.box').querySelector('ul')
+        //获取的是第一个子节点，不管是文本还是元素节点
+        console.log(ul.firstChild);
+
+        //一般用 parent.firstElementChild来获取第一个子级元素节点
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild);
+
+        //实际开发中  既没有兼容问题，又返回第一个子元素
+        console.log(ul.children[0]);
+        console.log(ul.children[ul.children.length-1]);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button>传统</button>
+    <button>监听方法</button>
+    <button>AttachEvent</button>
+
+
+    <script>
+        //传统注册事件
+        var btns=document.querySelectorAll('button')
+        btns[0].onclick=function(){
+            alert('11111')
+        }
+        btns[0].onclick=function(){
+            alert('2222')
+        }
+
+        //2.监听方式
+        btns[1].addEventListener('click',function(){
+            alert('22222222222222222222222222222')
+        })
+        btns[1].addEventListener('click',function(){
+            alert('2333333333333333333333333')
+        })
+
+        //3.attachEvent注册时间，不建议的方式
+        //这个是ie独有的，ie9之前才可以用
+        btns[2].attachEvent('onclick',function(){
+            alert('hhhhh')
+        })
+
+    </script>
+</body>
+</html>

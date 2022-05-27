@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,ol{
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>哈哈哈哈哈哈1</li>
+        <li>哈哈哈哈哈哈2</li>
+        <li>哈哈哈哈哈哈3</li>
+        <li>哈哈哈哈哈哈4</li>
+        <li>哈哈哈哈哈哈5</li>
+    </ul>
+    <ol id="ol"
+        <li>一二三四1</li>
+        <li>一二三四2</li>
+        <li>一二三四3</li>
+        <li>一二三四4</li>
+        <li>一二三四5</li>
+    </ol>
+
+
+
+    <script>
+        //getElementByTagName  
+        var lis = document.getElementsByTagName('li')
+        console.log(lis);
+        console.log(lis[0]);
+
+        //遍历
+        for (i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        //获取ol
+        // var ol = document.getElementsByTagName('ol')
+        // // ol.getElementsByTagName('li')
+        // // console.log(ol);
+        // console.log(ol[0].getElementsByTagName('li'));
+
+        var ol=document.getElementById('ol')
+
+        console.log(ol.getElementsByTagName('li'));
+
+    </script>
+</body>
+
+</html>

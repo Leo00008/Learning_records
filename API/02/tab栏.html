@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            
+        }
+
+        .tab {
+            width: 800px;
+            height: 500px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .tab_list {
+            width: 800px;
+            height: 50px;
+
+        }
+
+        .tab_list ul {
+            height: 52px;
+            border-bottom: 2px solid #C81623;
+        }
+
+        .tab_list li {
+            width: 100px;
+            height: 50px;
+            background-color: #ccc;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .current {
+            background-color: #C81623 !important;
+            color: white;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格包装</li>
+                <li>详情</li>
+                <li>评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_content">
+            <div class="item" style="display: block;">
+                商品介绍
+                这是一台手机
+            </div>
+            <div class="item">
+                规格包装
+                185g
+                灰色
+
+            </div>
+            <div class="item">
+                详情
+                手机好用
+            </div>
+            <div class="item">
+                评价
+                好评！！
+            </div>
+            <div class="item">
+                手机社区
+                进入社区
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        //导航栏操作
+
+        //获取的tab每个li
+        var lis = document.querySelector('.tab_list').querySelectorAll('li')
+
+        //获取的下拉菜单的div
+        var divs = document.querySelector('.tab_content').querySelectorAll('.item')
+
+
+        for (i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i)
+
+            var index = lis[i].getAttribute('index')
+
+            lis[i].onclick = function () {
+                //控制的lis被选中的状态
+                for (i = 0; i < lis.length; i++) {
+                    lis[i].removeAttribute('class')
+                }
+                this.setAttribute('class', 'current')
+
+                //2.0    
+
+                var index = this.getAttribute('index')
+
+                for (i = 0; i < divs.length; i++) {
+                    divs[i].style.display='none'
+                }
+
+                divs[index].style.display = 'block'
+
+            }
+
+            //2.          
+        }
+
+        //item效果
+
+
+
+
+
+    </script>
+</body>
+
+</html>

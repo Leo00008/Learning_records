@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ipt1,
+        #ipt2 {
+            color: #999;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <input type="text" value="用户/ID/手机号/邮箱" id="ipt1">
+        <input type="password" placeholder="密码" id="ipt2">
+        <button>登录</button>
+    </div>
+
+
+    <script>
+        var ipt1 = document.getElementById('ipt1')
+        var ipt2 = document.getElementById('ipt2');
+        ipt1.onfocus = function () {
+            if (ipt1.value == '用户/ID/手机号/邮箱')
+                ipt1.value = '';
+            ipt1.style.border = '1px solid pink'
+            this.style.color = '#333'
+        }
+        ipt1.onblur = function () {
+            if (ipt1.value == '') {
+                ipt1.value = '用户/ID/手机号/邮箱'
+                ipt1.style.border = '1px solid black'
+            }
+
+        }
+
+
+
+        ipt2.onfocus = function () {
+            this.placeholder = ''
+            this.style.border = '1px solid pink'
+        }
+        ipt2.onblur = function () {
+            ipt2.placeholder = "密码"
+            ipt2.style.border = '1px solid black'
+        }
+
+
+    </script>
+</body>
+
+</html>

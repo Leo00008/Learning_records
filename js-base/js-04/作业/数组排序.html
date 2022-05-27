@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var arr = [5, 2, 4, 3, 1,11,565,12,36];
+        for (var i = 0; i <= arr.length - 1; i++) {//控制的行数，行数=元素数-1
+            for (var j = 0; j <= arr.length - i - 1; j++) {//控制每行 交换次数
+
+                if (arr[j] < arr[j + 1]) {//当J=0时，比较arr里面第一个元素与第二个元素谁大，如果
+                                            //第一个元素比第二个大，则：
+
+                    var temp = arr[j];  //临时变量里 存储arr第一个元素
+                    arr[j] = arr[j + 1];//第一个元素与第二个元素交换
+                    arr[j + 1] = temp;  //第二个元素与第一个元素交换
+                }
+
+            }
+        }
+        console.log(arr);
+
+
+
+    </script>
+</body>
+
+</html>

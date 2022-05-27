@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            margin: 100px auto;
+            border-collapse: collapse;
+            
+        }
+
+        table thead th {
+            width: 150px;
+            height: 30px;
+            background-color: skyblue;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            border-right: 1px solid #999;
+        }
+
+        table thead th:nth-child(1) {
+            width: 50px;
+        }
+
+        tbody tr td {
+            float: left;
+            width: 150px;
+            height: 30px;
+            background-color: rgb(211, 210, 210);
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid #999;
+        }
+
+        tbody tr td:nth-child(1) {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>
+                <input type="checkbox">
+            </th>
+            <th>商品</th>
+            <th>价格</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>iphone8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var head_checkbox = document.querySelector('thead').querySelector('input')
+        var body_checkbox = document.querySelector('tbody').querySelectorAll('input')
+        console.log(body_checkbox);
+
+        head_checkbox.onclick = function () {
+            for (i = 0; i < body_checkbox.length; i++) {
+                body_checkbox[i].checked = this.checked
+            }
+        }
+
+        //2.0
+
+        for (i = 0; i < body_checkbox.length; i++) {
+            //每次点击每个小框，就要去判断所有小框是否全部选择
+            //选中第一个小框，判断一次，选中第二个小框，判断一次，以此类推
+            body_checkbox[i].onclick = function () {
+                
+                var flag = true;
+                for (i = 0; i < body_checkbox.length; i++) {
+                    //检查每个小框是否被选择
+                    //如果里面不是true
+                    if (!body_checkbox[i].checked) {
+                        flag = false;
+                        break;
+                        //提高执行效率，只要有一个没有被选中，剩下的则不用循环
+                    }
+
+                }
+                head_checkbox.checked = flag;
+
+            }
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

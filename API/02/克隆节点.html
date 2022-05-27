@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </div>
+    <button>123</button>
+
+    <script>
+        var btn=document.querySelector('button')
+        var box=document.querySelector('.box')
+        btn.onclick=function(){
+           var clone= box.children[0].cloneNode(true)//括号为空，或者false，浅拷贝，不复制里面的内容
+
+        //    box.appendChild(clone)   //在之后添加
+           box.insertBefore(clone,box.children[0])   //在之前添加
+        }
+    </script>
+</body>
+</html>

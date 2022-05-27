@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            display: block;
+            width: 650px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        table th,
+        table td {
+            width: 150px;
+            height: 30px;
+            float: left;
+            background-color: pink;
+            text-align: center;
+            line-height: 30px;
+        }
+        tbody tr{
+            display: block;
+            width: 650px;
+            height: 30px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>项目</th>
+            <th>学分</th>
+            <th>操作</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var datas = [{
+            name: '左德才',
+            subject: 'Java',
+            score: '100'
+        },
+        {
+            name: '维洛影',
+            subject: 'Java',
+            score: '98'
+        },
+        {
+            name: '红利',
+            subject: 'Java',
+            score: '87'
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷美',
+            subject: 'Java',
+            score: '90',
+        },
+        {
+            name: '彭喷1',
+            subject: 'Java',
+            score: '90',
+        },
+
+        ]
+
+        //2.往tbody里面添加行,有几个人就创建几行。
+        var tbody = document.querySelector('tbody')
+        for (i = 0; i < datas.length; i++) {
+            //生成tr标签
+            var tr = document.createElement('tr')
+            //添加行
+            tbody.appendChild(tr)
+
+            //3.行里面创建单元格td  td的个数取决于对象里面的属性的个数 需要用for..in遍历对象
+            for (var k in datas[i]) {
+                //遍历到第i个元素..datas[i]里面有几个元素，下面就会执行几次
+
+                //创建单元格,里面有几个元素就创建几个单元格
+                var td = document.createElement('td')
+                //在创建td后，直接把datas里面相应的值赋值给相应的td中
+                td.innerHTML = datas[i][k];  //i是datas的第几个，datas【k】是属性值
+                tr.appendChild(td)
+            }
+            //创建带有删除字样的单元格
+            var td = document.createElement('td')
+            //td里面赋值给功能
+            td.innerHTML = '<a href="javascript:;">删除</a>'
+            tr.appendChild(td)
+        }
+        //删除操作
+
+        //获取a元素。给每个a绑定事件
+        var as = tbody.querySelectorAll('a')
+        for (i = 0; i < as.length; i++) {
+
+            as[i].onclick = function () {
+
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

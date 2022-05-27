@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //写一个函数，用户输入任意三个不同数字的最大值，并能弹出运算后的结果
+
+        function getMax() {
+           /*  Number(prompt(), prompt(), prompt()) */
+            var arr = [Number(prompt()),Number(prompt()),Number(prompt())];
+            var max = arr[0];
+
+            for (i = 0; i <= arr.length; i++) {
+                if (arr[i + 1] > max) {
+                    max = arr[i+1];
+                }
+            }
+            return max;
+        }
+        console.log(getMax());
+
+
+    </script>
+</body>
+
+</html>

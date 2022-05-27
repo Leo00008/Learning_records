@@ -1,0 +1,60 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li{
+    list-style: none;
+}
+
+.banner{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.msg_text{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    textarea{
+        width: 100%;
+        height: 50px;
+    }
+    button{
+        position: absolute;
+        top: 60px;
+        left: 600px;
+        background-color: orange;
+        width: 50px;
+        height: 30px;
+        border-radius: 5px;      
+        border: none;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(241, 189, 91);
+        }
+    }
+}
+.msg_board{
+    margin-top: 50px;
+    
+    li{
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        background-color: skyblue;
+
+        button{
+            width: 50px;
+            height: 30px;
+            float: right;
+            line-height: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+

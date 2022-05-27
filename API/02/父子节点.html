@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">X</span>
+    </div>
+
+    <script>
+        // parentNode
+        var erweima=document.querySelector('.erweima')
+        // var box =document.querySelector('.box')
+        console.log(erweima.parentNode);
+
+        //parentNode.childNodes
+        var ul=document.querySelector('ul')
+        //会得到所有的子节点，包含文本节点，元素节点..
+        console.log(ul.childNodes);
+        console.log(ul.children);
+
+
+    </script>
+</body>
+</html>

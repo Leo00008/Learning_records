@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,ol{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>春眠不觉晓</li>
+            <li>处处闻啼鸟</li>
+            <li>夜来风雨声</li>
+            <li>花落知多少</li>
+        </ul>
+    </div>
+
+
+
+    <script>1
+        //getElementByClassName()
+        // var box=document.getElementsByClassName('box')
+        // console.log(box);
+
+        //2. document.querySelector 返回指定选择器的第一个元素对象
+        // var boxs=document.querySelector('.box')
+        // console.log(boxs);
+        // var nav=document.querySelector('#nav')
+        // console.log(nav);
+        // var lis=document.querySelector('li')
+        // console.log(lis);
+        // var lis=document.querySelector('ul')
+        // console.log(lis);
+        var lis=document.querySelectorAll(' li')
+        console.log(lis);
+
+
+
+
+    </script>
+</body>
+</html>

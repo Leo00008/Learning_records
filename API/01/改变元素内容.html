@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>当前时间</p>
+
+    <script>
+
+        //当我们点击按钮，div里面的文字会发生变化
+        var btn=document.querySelector('button')
+
+        var div=document.querySelector('div')
+        //注册时间
+        btn.onclick=function(){
+            div.innerText=new Date().toLocaleDateString('fr-CA');
+        }
+
+        //元素可以不用添加事件
+        var p=document.querySelector('p')
+        p.innerText=new Date().toLocaleDateString('fr-CA');
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
