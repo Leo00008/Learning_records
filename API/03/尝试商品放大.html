@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .goods {
+            /* position: relative; */
+            width: 400px;
+            height: 400px;
+            margin: 100px 100px;
+            border: 1px solid #000;
+
+        }
+
+        .goods img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .goods span {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(233, 229, 14, 0.5);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goods">
+        <span></span>
+        <img src="./images/3.webp" alt="">
+    </div>
+
+
+    <script>
+        var goods = document.querySelector('.goods')
+        var span = document.querySelector('span')
+        goods.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            // if ((x > 200 && x < 400) && (y < 400 && y > 200)) {
+
+            // }
+                x<400;
+                x>200;
+                y>200;
+                y<400;
+            span.style.left = x-100  + 'px'
+            span.style.top = y-100  + 'px'
+        })
+
+        goods.addEventListener('mouseover', function () {
+            span.style.opacity = '1'
+        })
+        goods.addEventListener('mouseout', function () {
+            span.style.opacity = '0'
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        img {
+            position: fixed;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/angel.gif" alt="">
+
+    <script>
+        var img = document.querySelector('img')
+
+        document.addEventListener('mousemove', function (e) {
+            // var x = e.pageX//获取鼠标X位置
+
+            // var y = e.pageY//获取鼠标Y位置
+
+            var x = e.clientX//获取鼠标X位置
+
+            var y = e.clientY//获取鼠标Y位置
+
+            
+            img.style.left = x-50 + 'px';//   X控制的是le左右
+            img.style.top = y-50 + 'px'    // y控制的是上下
+            
+        })
+
+    </script>
+</body>
+
+</html>
