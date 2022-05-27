@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <a href="https://www.bilibili.com/video/BV1k4411w7sV?p=65">ITheima</a>
+    <form action="https://www.bilibili.com/video/BV1k4411w7sV?p=65">
+        <input type="submit" value="提交"  name="sub">
+    </form>
+
+    <script>
+        //常见事件阻止默认行为
+
+        //  1.返回事件类型
+        var div=document.querySelector('div')
+        div.addEventListener('click',fn)
+        div.addEventListener('mouseover',fn)
+        div.addEventListener('mouseout',fn)
+        function fn(event){
+            console.log(event.type);
+            //返回的事件类型hh
+        }
+
+        //  2.0   阻止默认行为（事件）
+        //让链接不跳转，或者提交按钮不提交
+        var a =document.querySelector('a')
+        a.addEventListener('click',function(e){
+            e.preventDefault();//dom标准写法
+        })
+
+        a.onclick=function(e){
+
+            //传统注册，也可以用e.preventDefault
+            e.preventDefault();
+
+
+            //return false也可以阻止事件默认行为
+            //坏处，如果后面有代码，就不执行了
+            //只限于传统的注册方式
+            return false
+        }
+
+
+    </script>
+</body>
+</html>

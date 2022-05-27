@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var div = document.querySelector('div')
+        div.addEventListener('click', function (event) {
+            console.log(event.target);
+            console.log(this);
+        })
+
+        var ul = document.querySelector('ul')
+        var lis = ul.querySelectorAll('li')
+
+        ul.addEventListener('click', function (e) {
+            //this 指向的是事件的绑定者
+            //e.target(触发事件的时候点击的谁，就返回谁)
+            // lis[0].style.fontSize = '20px'
+            console.log(e.target);
+            console.log(this);
+
+        })
+    </script>
+</body>
+
+</html>
