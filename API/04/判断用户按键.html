@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="请输入...">
+
+    <script>
+        var ipt = document.querySelector('input')
+
+
+        document.addEventListener('keyup', function (e) {
+            if (e.key === 's') {
+
+                ipt.focus();
+                ipt.value = ''
+            }
+        })
+
+
+
+        ipt.addEventListener('blur', function () {
+            if (ipt.value.length == 0) {
+                this.value = '请输入...'
+            }
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

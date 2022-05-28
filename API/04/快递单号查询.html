@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+
+            position: relative;
+            width: 300px;
+            height: 50px;
+            margin: 100px auto;
+        }
+
+        textarea {
+
+            display: block;
+            width: 300px;
+            height: 50px;
+        }
+
+        .box .content {
+            display: none;
+            position: absolute;
+            top: -65px;
+            left: 50px;
+            width: 200px;
+            height: 50px;
+            border: 1px solid #000;
+            font-size: 20px;
+            box-shadow: 2px 2px 2px 2px #999;
+        }
+
+        .content::after {
+            position: absolute;
+            left: 30px;
+            top: 50px;
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-left: 0px solid white;
+            border-right: 0px solid white;
+            border-bottom: 0px solid white;
+            border-top: 8px solid #999;
+            box-shadow: 2px 2px 2px 2px #999;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <textarea name="" id="" cols="30" rows="10" placeholder="请输入..."></textarea>
+        <div class="content"></div>
+
+    </div>
+
+
+
+
+    <script>
+        var text = document.querySelector('textarea')
+        var content = document.querySelector('.content')
+
+        text.addEventListener('keyup', function () {
+
+            if (text.value.length == 0) {
+                content.style.display = 'none'
+            } else {
+                content.style.display = 'block'
+                content.innerHTML = text.value
+            }
+        })
+
+        text.addEventListener('blur',function(){
+            content.style.display='none'
+        })
+        
+
+
+    </script>
+
+</body>
+
+</html>
