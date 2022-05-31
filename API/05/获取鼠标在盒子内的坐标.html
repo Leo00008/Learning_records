@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector('.box')
+        box.addEventListener('click', function (e) {
+            //常规写法。
+            // var x = (e.clientX) - (box.offsetLeft);
+            // var y = (e.pageY) - (box.offsetTop);
+
+            //现在可以用  e.offsetX和e.offsetY获取
+            var x = e.offsetX
+            var y = e.offsetY
+
+            console.log('X:' + x + '\t' + 'Y:' + y);
+
+        })
+    </script>
+</body>
+
+</html>

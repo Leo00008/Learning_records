@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con h1 {
+            display: block;
+            width: 600px;
+            height: 50px;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .login {
+            display: none;
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 300px;
+            background-color: white;
+
+        }
+
+        .login .close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .login .close a {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+
+        .login .title {
+            width: 100%;
+            height: 40px;
+            margin: 10px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 25px;
+        }
+        .login .title:hover{
+            cursor: move;
+        }
+
+        .login_input_content {
+            margin-top: 30px;
+        }
+
+        .login_input_content .input,
+        .login_input_content .password {
+            margin-top: 30px;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .login_input_content .input label,
+        .login_input_content .password label {
+            width: 100px;
+            height: 40px;
+            width: 150px;
+            float: left;
+        }
+
+        .login_input_content .input input,
+        .login_input_content .password input {
+            float: left;
+            width: 400px;
+            height: 35px;
+        }
+
+        .login .sub {
+            width: 100%;
+            height: 40px;
+            margin-top: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .login .sub input {
+            width: 150px;
+            height: 40px;
+        }
+
+        .login_bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(000, 000, 000, .3);
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 文本页  点击弹出 -->
+    <div class="con">
+        <h1>点击！弹出登录框</h1>
+    </div>
+    <form action="">
+        <!-- 弹出的登录框 -->
+        <div class="login">
+            <!-- 关闭按钮 -->
+            <div class="close"><a href="#">关闭</a></div>
+            <!-- 抬头 可移动 -->
+            <div class="title">
+                登陆会员
+            </div>
+            <!-- 用户名和密码框 -->
+            <div class="login_input_content">
+                <div class="input">
+                    <label for="">用户名:</label>
+                    <input type="text" placeholder="请输入账户">
+                </div>
+                <div class="password">
+                    <label for="">密码:</label>
+                    <input type="password" placeholder="请输入密码">
+                </div>
+            </div>
+
+            <!-- 提交按钮i -->
+            <div class="sub">
+                <input type="submit" value="登录用户">
+            </div>
+    </form>
+
+    </div>
+    <!-- 遮盖层 -->
+    <div class="login_bg"></div>
+
+    <script>
+        //获取点击弹出的元素，点击该元素，弹出登录
+        var con = document.querySelector('.con').querySelector('h1')
+        //获取登录框
+        var login = document.querySelector('.login')
+        //获取关闭按钮
+        var close = login.querySelector('.close')
+        //获取遮盖层，背景色
+        var login_bg = document.querySelector('.login_bg')
+
+        //点击，弹出遮盖层与登录框
+        con.addEventListener('click', function () {
+            login.style.display = 'block'
+            login_bg.style.display = 'block'
+
+        })
+        //点击，关闭遮盖层与登录框
+        close.addEventListener('click', function () {
+            login.style.display = 'none'
+            login_bg.style.display = 'none'
+        })
+
+        //获取登录框titel元素，添加跟随鼠标移动功能
+        var title = login.querySelector('.title')
+
+        title.addEventListener('mousedown', function (e) {
+            //鼠标在盒子内的距离
+            //y因为他的父级盒子被定位了，所以offsetX,Y返回的不正确
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+
+            document.addEventListener('mousemove', move)
+
+            function move(e) {
+                //鼠标距离边框的距离
+
+                login.style.left = e.pageX - x + 'px'
+                login.style.top = e.pageY - y + 'px'
+            }
+
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move)
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

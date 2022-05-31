@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="index.html">
+        用户名： <input type="text" name="uname">
+        <input type="submit" class="submit" value="登录">
+    </form>
+    <script>
+        var ipt = document.querySelector('input')
+        var submit = document.querySelector('.submit')
+
+        submit.addEventListener('click', function () {
+            if (ipt.value == '') {
+                alert('您输入的为空，请重新输入')
+            } else {
+                location.search = ipt.value;
+                location.href = 'file:///F:/Web%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/learnJavaScript/API/04/%E7%99%BB%E9%99%86%E5%90%8E%E8%B7%B3%E8%BD%AC%E5%88%B0%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2/index.html'
+            }
+        })
+    </script>
+</body>
+
+</html>

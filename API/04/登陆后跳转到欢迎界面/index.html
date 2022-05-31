@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>登陆成功</h1>
+
+    <p>
+
+    </p>
+
+
+    <script>
+        var p = document.querySelector('p')
+
+        window.onload = function () {
+            var params = location.search.substr(1);
+            //此时的params获得的是?uname=RED  从第七个字符开始截取
+            // uname= params.substr(7);
+            var arr = params.split('=')
+            console.log(arr);
+            p.innerHTML = '欢迎' + arr[1]
+        }
+    </script>
+</body>
+
+</html>

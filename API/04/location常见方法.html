@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script>
+        var btn=document.querySelector('button')
+        btn.addEventListener('click',function(){
+            //记录历史，可以后退
+            // location.assign('http://itcast.cn')
+
+            //不记录历史，不可以后退
+            // location.replace('http://itcast.cn')
+
+            //重新加载界面，相当于刷新按钮或者F5  点击后刷新该界面
+            location.reload('')
+        })
+    </script>
+</body>
+</html>
