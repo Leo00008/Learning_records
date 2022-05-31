@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .time {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            height: 50px;
+            margin: 100px auto;
+        }
+
+        .time div {
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .time span {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 50px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="time">
+        <div class="h"></div>
+        <span>:</span>
+        <div class="m"></div>
+        <span>:</span>
+        <div class="s"></div>
+    </div>
+
+
+    <script>
+        //         显示当前时间
+        var divs = document.querySelector('.time').querySelectorAll('div');
+        // setInterval(function () {
+        //     //获取日期
+        //     var date = new Date();
+        //     //获取当前时分秒
+        //     var h = date.getHours();
+        //     var m = date.getMinutes();
+        //     var s = date.getSeconds();
+        //     //把时分秒赋值给div
+        //     divs[0].innerHTML = h
+        //     divs[1].innerHTML = m
+        //     divs[2].innerHTML = s           
+        // }, 1000)。。
+
+
+        //用户输入时间
+        var endTime = new Date("2022-5-29 10:30:30");
+            count();
+            setInterval(count,1000);
+        
+            function count() {
+                var nowTime = new Date();//获取当前时间
+                //创建目标日期
+
+                var seconds = parseInt((endTime.getTime() - nowTime.getTime()) / 1000);
+                //两个时间点的时间差(秒)
+                var d = parseInt(seconds / 3600 / 24);//得到天数
+                var h = parseInt(seconds / 3600 % 24);//小时
+                var m = parseInt(seconds / 60 % 60);//分钟
+                var s = parseInt(seconds % 60);//秒
+
+                h = h < 10 ? '0' + h : h
+                divs[0].innerHTML = h
+
+                m = m < 10 ? '0' + m : m
+                divs[1].innerHTML = m
+
+                s = s < 10 ? '0' + s : s
+                divs[2].innerHTML = s
+
+            };
+        
+
+
+    </script>
 </body>
+
 </html>

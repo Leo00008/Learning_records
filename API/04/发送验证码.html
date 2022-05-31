@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>点击发送验证码</button>
+
+    <script>
+        var ipt = document.querySelector('input')
+        var btn = document.querySelector('button')
+
+        var time = 3;
+
+
+
+
+        btn.addEventListener('click', function () {
+            btn.disabled = 'true'
+            var countDown = setInterval(function () {
+
+                if (time == 0) {
+                    //如果time时间到了，清除定时器，恢复按钮和文字
+                    clearInterval(countDown)
+                    btn.innerHTML = '点击发送验证码'
+                    btn.disabled = false;
+                    //时间也要记得改回来
+                    //time写在时间里面，就不用写time=3了
+                    time = 3;
+                } else {
+                    //如果时间没到：
+                    btn.innerHTML = '还剩' + time + '秒再次发送';
+                    time--;
+                }
+            }, 1000)//一秒间隔
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>111</button>
+
+    <script>
+        //  1. 全局作用域或者普通函数中this指向全局对象  window
+        //定时器里面的this也是指向window
+        // console.log(this);
+        // function fn() {
+        //     console.log(this);
+        // }
+        // fn();
+
+        // setTimeout(function () {
+        //     console.log(this);
+        // }, 500)
+
+        // //    2.  方法调用中，谁调用，this就指向谁
+        // var btn = document.querySelector('button')
+        // btn.addEventListener('click', function () {
+        //     console.log(this);
+        // })
+
+
+        // var o = {
+        //     hi:function(){
+        //         console.log(this);
+        //     }
+        // }
+        // o.hi();
+
+
+        //3.  构造函数中  this指向构造函数的实例
+
+        function Fun(){
+            console.log(this);
+        }
+        Fun();//指向的window
+
+        var fun=new Fun();
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
