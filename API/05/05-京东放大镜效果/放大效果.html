@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 200px 400px;
+            /* overflow: hidden; */
+        }
+
+        .box .mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(226, 195, 20, 0.3);
+            cursor: move;
+        }
+
+        .box .big_pic {
+            display: block;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 401px;
+            top: 0;
+            border: 1px solid #000;
+            margin-left: 5px;
+            overflow: hidden;
+        }
+
+        .box .big_pic img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 800px;
+            height: 800px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./upload/s3.png" alt="">
+        <div class="mask"></div>
+        <div class="big_pic">
+            <img src="./upload/b3.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        var box = document.querySelector('.box')//box
+        var mask = box.children[1]//.box mask
+        var big = box.children[2]//.big_pic
+        var pic = big.children[0]//.big_pic img
+
+        //鼠标移入事件
+        box.addEventListener('mouseover', function () {
+            mask.style.display = 'block'
+            big.style.display = 'block'
+        })
+        //鼠标移出事件
+        box.addEventListener('mouseout', function () {
+            mask.style.display = 'none'
+            big.style.display = 'none'
+        })
+
+
+        box.addEventListener('mousemove', function (e) {
+            //遮盖层跟着鼠标走，获取鼠标到盒子边缘的距离
+            //先获取鼠标到窗口的距离
+
+            // x，y=鼠标到窗口的距离-盒子到窗口的距离 =  鼠标到盒子内的距离
+            var x = e.pageX - box.offsetLeft
+            var y = e.pageY - box.offsetTop
+
+            //  鼠标要放在遮盖层盒子的中间，
+            //  所以：鼠标到盒子内的距离  -  遮盖层宽度的一半  =  居中
+            var maskX = x - (mask.offsetWidth / 2)
+            var maskY = y - (mask.offsetHeight / 2)
+
+            //  遮盖层盒子的最大移动距离  == 盒子的宽度  -- 遮盖层的宽度
+            var maskMaxX = box.offsetWidth - mask.offsetWidth
+            var maskMaxY = box.offsetHeight - mask.offsetHeight
+
+            //判断mask距离，不让mask盒子溢出
+            if (maskX <= 0) {
+                maskX = 0
+                //        X移动距离  =    200=盒子宽度减去mask宽度 400-200
+            } else if (maskX >= maskMaxX) {
+                maskX = maskMaxX
+            }
+            if (maskY <= 0) {
+                maskY = 0
+                //      Y移动距离      200=盒子高度减去mask高度 400-200
+            } else if (maskY >= maskMaxY) {
+                maskY = maskMaxY
+            }
+            //  结果：
+            mask.style.left = maskX + 'px'
+            mask.style.top = maskY + 'px'
+
+
+            //以下写大盒子
+            //大图XY轴最大移动距离
+            var bigMaxX = big.offsetWidth - pic.offsetWidth
+            var bigMaxY = big.offsetHeight - pic.offsetHeight
+
+            //大图片的移动距离  = 遮盖层距离*大图移动距离/遮挡层最大移动距离
+            var bigX = maskX * bigMaxX / maskMaxX
+            var bigY = maskY * bigMaxY / maskMaxY
+
+
+            pic.style.left = bigX + 'px'
+            pic.style.top = bigY + 'px'
+
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

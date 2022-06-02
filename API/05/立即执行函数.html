@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //立即执行函数   不需要调用，立即执行
+
+        //(function() {})()   或者  (function(){}  ())
+
+        //1.
+        (function(a,b){
+            console.log(a+b);
+        })(1,2);//后面的这个小括号 可以看作调用函数
+
+        //2.  第二种写法
+        (function(a,b){
+            console.log(a+b);
+        }(1,2))
+
+        //3.  立即执行函数最大的作用就是创建了一个独立作用域
+        //里面所有的变量都是局部变量  不会有命名冲突
+
+    </script>
+</body>
+
+</html>
