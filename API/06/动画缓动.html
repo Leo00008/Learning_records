@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+
+    <script>
+        var div = document.querySelector('div')
+
+        function animate(obj, target) {
+            // clearInterval(obj.toRight);
+            obj.toRight = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.toRight);
+                }
+                //  （目标位置-当前位置）/10   步长值
+                //   （300-offsetLeft）/10
+                obj.style.left = obj.offsetLeft + ((target-obj.offsetLeft)/10) + 'px'
+            }, 15)
+        }
+
+
+        animate(div, 600)
+    </script>
+
+</body>
+
+</html>

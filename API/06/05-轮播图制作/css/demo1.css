@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+.box {
+  position: relative;
+  width: 700px;
+  height: 400px;
+  background-color: pink;
+  margin: 100px auto;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.box ul {
+  width: 500%;
+  /* transform: translate(-700px); */
+}
+.box .pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.box .pic li {
+  /* position: absolute; */
+  /* transform: translate(-700px); */
+  width: 700px;
+  float: left;
+}
+.box .pic li img {
+  width: 700px;
+  height: 400px;
+}
+.box .left {
+  position: absolute;
+  left: 10px;
+  top: 180px;
+  z-index: 99;
+  display: none;
+}
+.box .right {
+  position: absolute;
+  right: 10px;
+  top: 180px;
+  z-index: 99;
+  display: none;
+}
+.box .circle {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: 300px;
+  /* width: 100px; */
+  height: 10px;
+}
+.box .circle li {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.box .circle li:hover {
+  cursor: pointer;
+}
+.box .circle .current {
+  background-color: orange;
+}
