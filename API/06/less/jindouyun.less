@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: 0;
+}
+
+body {
+    background-color: #999;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.box {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1200px;
+    height: 50px;
+    background-color: white;
+    margin: 100px auto;
+
+    #cloud {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 50px;
+        background-image: url(../images/cloud.gif);
+        background-size: cover;
+    }
+
+    .navbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        li {
+            float: left;
+            display: block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            z-index: 999;
+        }
+    }
+}

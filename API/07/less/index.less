@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    height: 400px;
+    margin: 10px auto;
+    background-color: pink;
+
+    .nav {
+        width: 300px;
+        height: 400px;
+        background-color: rgb(90, 87, 87, 0.3);
+    }
+
+    .focus {
+        width: 600px;
+        height: 400px;
+        background-color: red;
+        position: relative;
+
+        .swiper {
+            width: 100%;
+            height: 100%; 
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .nav_r {
+        width: 250px;
+        height: 400px;
+        background-color: rgba(255, 90, 87, .5);
+    }
+}
