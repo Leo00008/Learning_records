@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Jquery.min.js"></script>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button>淡入效果</button>
+    <button>淡出效果</button>
+    <button>淡入淡出切换</button>
+    <button>修改透明度</button>
+    <div></div>
+
+    <script>
+        $(function () {
+            //淡入
+            $("button").eq(0).click(function () {
+                $("div").fadeIn()
+            })
+            //淡出
+            $("button").eq(1).click(function () {
+                $("div").fadeOut()
+            })
+            //切换
+            $("button").eq(2).click(function () {
+                $("div").fadeToggle()
+            })
+
+            //修改透明度
+            $("button").eq(3).click(function () {
+                $("div").fadeTo(1000,0.5)
+            })
+        })
+    </script>
+</body>
+
+</html>

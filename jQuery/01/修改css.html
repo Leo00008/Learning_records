@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="Jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        $(function () {
+            //如果什么都不写，不做修改，返回的是css宽度的值  200px
+            // $('div').css('width')
+            // console.log($('div').css('width'));3
+
+            $('div').css({
+                width: '400',
+                height: '400',
+                backgroundColor: 'red' //如果是符合属性，需要采用驼峰命名法
+
+            })
+        })
+    </script>
+</body>
+
+</html>

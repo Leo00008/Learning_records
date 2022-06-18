@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .current {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        $(function () {
+            //添加类
+            // $('div').click(function () {
+            //     $(this).addClass('current').css('transition', 'all .5s')
+            // })
+
+            //删除类
+            // $('div').click(function () {
+            //     $(this).removeClass('current')
+            // })
+
+            //切换类
+
+            $('div').click(function () {
+                $(this).toggleClass('current').css('transition', 'all .5s')
+            })
+
+        })
+    </script>
+</body>
+
+</html>
