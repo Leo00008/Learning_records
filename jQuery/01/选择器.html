@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Jquery.min.js"></script>
+</head>
+
+<body>
+    <div>我是div</div>
+    <div class="nav">我是nav</div>
+    <p>我是p</p>
+    <ul>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+        <li>我是ul li</li>
+    </ul>
+    <ol>
+        <li>ol li</li>
+        <li>ol li</li>
+        <li>ol li</li>
+        <li>ol li</li>
+        <li>ol li</li>
+    </ol>
+
+    <script>
+        $(function () {
+            console.log($(".nav"));  //获取到 div的nav
+
+            //层级选择器
+            //子代
+            console.log($("ol>li"));
+            //后代
+            console.log($('ol li'));
+        })
+    </script>
+</body>
+
+</html>

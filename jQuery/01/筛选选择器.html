@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>        
+    </ul>
+    <ol>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+        <li>222</li>
+    </ol>
+
+    <script>
+        $(function(){
+            //获取第一个
+            $('ul li:first').css('color','red')
+            //回去第三个
+            $('ul li:eq(2)').css('color','blue')
+            //  索引号是奇数的  
+            $('ol li:odd').css('color','skyblue')
+            //  索引号是偶数的  
+            $('ol li:even').css('color','pink')
+        })
+    </script>
+</body>
+</html>
