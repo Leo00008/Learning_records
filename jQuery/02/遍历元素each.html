@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="dd">1</div>
+    <div class="dd">2</div>
+    <div class="dd">3</div>
+
+
+    <script>
+        $(function () {
+            var sum = 0
+            $(".dd").each(function (i, domEle) {
+                // console.log(i);
+                //获取的是dom对象，不可以jQuery方法
+                // console.log(domEle);
+                // $(domEle).css('color','blue')
+                var arr = ['blue', 'green', 'pink']
+                $(domEle).css('color', arr[i])
+
+                //获取到每个div的值  并且相加
+
+                sum += parseInt($(domEle).text())
+            })
+            console.log(sum);
+
+
+            //2.遍历数据  
+            $.each($(".dd"), function (i, domEle) {
+                console.log(i);
+            })
+
+        })
+    </script>
+</body>
+
+</html>
