@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../01/Jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" title="hah">百度一下</a>
+
+    <input type="checkbox" id="" checked>
+
+    <div index="1"></div>
+    <script>
+        $(function () {
+            //获取元素元素属性
+            $("a").prop('href');
+            console.log($("a").prop('href'));
+
+            //属性操作、
+            $("a").prop('title', '点我');
+
+            //查看ipt状态
+            $("input").change(function () {
+                console.log($(this).prop('checked'));
+            })
+
+            //prop不可与获取自定义属性
+            //自定义属性需要 attr()
+            //               $("div").attr()
+            console.log($("div").attr("index"));
+
+            console.log($("input").attr("href"));
+        })
+    </script>
+</body>
+
+</html>

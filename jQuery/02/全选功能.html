@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="good_title">
+        <input type="checkbox" class="checkAll">
+    </div>
+    <div class="goos_list">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+    <div class="bottom">
+        <input type="checkbox" class="checkAll">
+    </div>
+
+    <script>
+        $(function () {
+            $(".checkAll").change(function () {
+                $(".goos_list input , .checkAll").prop('checked', $(this).prop("checked"))
+            })
+
+            $(".goos_list input").change(function () {
+                // console.log($(".goos_list input:checked"));
+                if ($(".goos_list input:checked").length === $(".goos_list input").length) {
+                    $(".checkAll").prop('checked', true)
+                } else {
+                    $(".checkAll").prop('checked', false)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
