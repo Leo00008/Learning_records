@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        $(function () {
+            //   one()触发一次
+            // $("div").one("click",function(){
+            //     console.log(11);
+            // })
+
+            $("div").on("click", function () {
+               console.log(1);
+            })
+
+            //自动触发 
+            //1.
+            $("div").click();
+
+        })
+    </script>
+</body>
+
+</html>

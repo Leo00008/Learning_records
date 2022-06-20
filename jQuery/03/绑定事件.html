@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: purper;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        $(function () {
+            $("div").on({
+                click: function () {
+                    $(this).css("background", "red")
+                },
+                mouseover: function () {
+                    $(this).css("background", "green")
+                },
+                mouseleave: function () {
+                    $(this).css("background", "skyblue")
+                }
+            })
+
+            //事件委托
+            $("ul").on("click", "li", function () {
+                $(this).css("color","red")
+            })
+
+        })
+    </script>
+</body>
+
+</html>
