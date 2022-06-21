@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/template-web.js"></script>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/html" id="moban">
+
+            <div id="title"></div>
+            <div>姓名：{{name}}<span id="name"></span></div>
+            <div>年龄：{{age}}<span id="age"></span></div>
+            <div>会员：{{isVIP}}<span id="isVIP"></span></div>
+            <div>注册时间：{{regTime}} <span id="regTime"></span></div>
+            <div>爱好：
+                <ul id="hobby">
+                    {{each hobby}}
+                    <li>爱好：{{$value}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        
+    </script>
+
+    <script>
+        var data = {
+            title: '<h3>用户信息</h3>',
+            name: 'zs',
+            age: 20,
+            isVIP: true,
+            regTime: new Date(),
+            hobby: ['吃饭', '睡觉', '打豆豆']
+        }
+
+
+        var htmlStr = template("moban", data)
+        console.log(htmlStr);
+
+        var container = document.querySelector('#container')
+        container.innerHTML = htmlStr
+
+        // $("#container").html(htmlStr)
+    </script>
+</body>
+
+</html>

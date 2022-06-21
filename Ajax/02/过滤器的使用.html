@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/template-web.js"></script>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/html" id="mb">
+        <div id="container">{{regTime|dateFormat}}</div>
+    </script>
+
+    <script>
+        
+        template.defaults.imports.dateFormat = function (date) {
+            console.log(date);
+            var y = date.getFullYear()
+            var m = date.getMonth()
+            var d = date.getDate()
+
+            return y + '-' + m + '-' + d
+        }
+
+
+        var date = {
+            name: '',
+            age: '',
+            regTime: new Date(),
+
+        }
+
+        var htmlStr = template("mb", date)
+        console.log(htmlStr);
+
+        var container = document.querySelector('#container')
+        container.innerHTML = htmlStr
+
+    </script>
+</body>
+
+</html>
