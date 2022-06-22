@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var data = {
+            name: 'leo',
+            age: 18,
+            sex: 'Man'
+        }
+        var arr = []
+        for (var k in data) {
+            // //  k等于属性名
+            // console.log(k);
+
+            // //data =整个data数据对象
+            // console.log(data);
+
+            // 遍历： 依次为 leo 18 Man           
+            // console.log(data[k]);
+            //拼接
+            res = k + '=' + data[k]
+            arr.push(res)
+        }
+        console.log(arr);// 数组对象 
+
+        console.log(arr.join('&'));//变成了带有&的字符串
+
+    </script>
+</body>
+
+</html>

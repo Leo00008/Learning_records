@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var xhr = new XMLHttpRequest()
+        var fd = new FormData()
+        fd.append('uname', 'leo')
+        fd.append('password', '123456')
+
+        xhr.open('post', 'http://www.liulongbin.top:3006/api/formdata')
+        xhr.send(fd)
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+               var res =JSON.parse(xhr.responseText)
+               console.log(res);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
