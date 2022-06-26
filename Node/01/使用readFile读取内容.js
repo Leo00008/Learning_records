@@ -4,7 +4,7 @@ const fs = require('fs')
 
 //调用readFile（）读取文件
 
-fs.readFile('./files/0  1.txt', 'utf-8', function (err, dataStr) {
+fs.readFile('./files/01.txt', 'utf-8', function (err, dataStr) {
 
     //2.1失败结果
     console.log(err);
