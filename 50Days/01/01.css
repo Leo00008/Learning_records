@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: normal;
+    justify-content: center;
+    align-items: center
+}
+
+h2{
+    display: block;
+    margin: auto;
+    margin-top: 300px;  
+    width: 400px;
+    height: 30px;
+    /* background-color: pink; */
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.button{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    height: 40px;
+    background-color: pink;
+    margin-top: 10px;
+}
+.button label{
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background-color: #999;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.button label .ball{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 50%;
+    line-height: 34px;
+}
+.button span{
+    text-align: center;
+    line-height: 40px;
+    width: 50px;
+}
+
+.select{   
+    background-color: purple !important;    
+}
+
+
