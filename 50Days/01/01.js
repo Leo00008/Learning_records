@@ -1,11 +1,27 @@
-//获取按钮
-const LAB = document.querySelectorAll('label')
-const ball = document.querySelectorAll('ball')
+const toggle = document.querySelectorAll('.toggle')
+const good = document.querySelector('#good')
+const fast = document.querySelector('#fast')
+const cheap = document.querySelector('#cheap')
 
-for (i = 0; i < LAB.length; i++) {
-    LAB[i].addEventListener('click', function () {
-        this.classList.add('select')
-        this.children[0].style.left = '40px'
-        this.children[0].style.animation = '0.5s ease-in-out 1s 1 normal none running none;'
+for (i = 0; i < toggle.length; i++) {
+    toggle[i].addEventListener('click', function (e) {
+        doTheTrick(e.target)
+        console.log(e.target);
     })
+}
+
+function doTheTrick(theClickedOne) {
+    if (good.checked && cheap.checked && fast.checked) {
+        if (good === theClickedOne) {
+            fast.checked = false
+        }
+
+        if (cheap === theClickedOne) {
+            good.checked = false
+        }
+
+        if (fast === theClickedOne) {
+            cheap.checked = false
+        }
+    }
 }

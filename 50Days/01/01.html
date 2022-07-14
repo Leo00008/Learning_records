@@ -2,36 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./01.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./01.css" />
+    <title>Good, Cheap, Fast</title>
 </head>
 
 <body>
-
     <h2>How do you want your project to be?</h2>
-
-    <div class="button">
-        <label class="select">
+    <div class="toggle-container">
+        <input type="checkbox" id="good" class="toggle">
+        <label for="good" class="label">
             <div class="ball"></div>
         </label>
         <span>Good</span>
     </div>
-    <div class="button">
-        <label class="">
+
+    <div class="toggle-container">
+        <input type="checkbox" id="cheap" class="toggle">
+        <label for="cheap" class="label">
             <div class="ball"></div>
         </label>
         <span>Cheap</span>
     </div>
-    <div class="button">
-        <label class="">
+
+    <div class="toggle-container">
+        <input type="checkbox" id="fast" class="toggle">
+        <label for="fast" class="label">
             <div class="ball"></div>
         </label>
         <span>Fast</span>
     </div>
-
     <script src="./01.js"></script>
 </body>
 
